@@ -268,7 +268,7 @@ logger.save_large_vars(anonymous_array, "my_array")
 
 1. **Hyperparameter naming**: Use UPPERCASE for variables you want to track
 2. **Figure quality**: Always use DPI >= 300 for publication-quality figures
-3. **Large variables**: Use `save_large_vars()` for arrays > 1MB to keep the main directory clean
+3. **Large variables**: Use `save_large_vars()` for arrays > 1000MB to keep the main directory clean
 4. **Cleanup**: Use `rm_logs()` carefully - it permanently deletes directories
 5. **Reproducibility**: Always call `seed_everything()` at the beginning of experiments
 
@@ -279,4 +279,3 @@ logger.save_large_vars(anonymous_array, "my_array")
   - `numpy` for enhanced `seed_everything()`
   - `torch` for PyTorch seed setting
   - `ipynbname` for Jupyter notebook saving
-```
