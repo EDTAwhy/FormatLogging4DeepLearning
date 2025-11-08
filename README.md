@@ -1,26 +1,26 @@
-
+```markdown
 # Logger Module README
 
 ## Overview
-The Logger module is a comprehensive logging utility designed for experiment tracking and data management. It automatically creates timestamped directories, saves hyperparameters, handles figure exports, and manages large variable storage.
+The LoggerFormatter class is a comprehensive logging utility designed for experiment tracking and data management. It automatically creates timestamped directories, saves hyperparameters, handles figure exports, and manages large variable storage.
 
 ## Installation
 ```python
-import Logger
+from Logger import LoggerFormatter
 ```
 
 ## Basic Usage
 
-### Initialize Logger
+### Initialize LoggerFormatter
 ```python
 # Basic initialization
-logger = Logger(project_name="my_experiment", base_path="./logs")
+logger = LoggerFormatter(project_name="my_experiment", base_path="./logs")
 
 # Default initialization
-logger = Logger()  # Uses project_name="exp", base_path="./logs"
+logger = LoggerFormatter()  # Uses project_name="exp", base_path="./logs"
 ```
 
-When initialized, the Logger will:
+When initialized, the LoggerFormatter will:
 - Create a timestamped directory (format: `YYYY-MM-DD-HH-MM-SS-project_name`)
 - Automatically save the source file (Python script or Jupyter notebook)
 - Print initialization details
@@ -39,7 +39,7 @@ Sets random seeds for reproducibility across different libraries.
 **Example:**
 ```python
 # Set seed for reproducibility
-logger.seed_everything(2026)
+logger.seed_everything(2024)
 ```
 
 **Supported libraries:**
@@ -171,7 +171,7 @@ logger.rm_logs()
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-import Logger
+from Logger import LoggerFormatter
 
 # Define hyperparameters (uppercase for auto-detection)
 BATCH_SIZE = 64
@@ -181,7 +181,7 @@ MODEL_TYPE = "CNN"
 DROPOUT_RATE = 0.5
 
 # Initialize logger
-logger = Logger(project_name="mnist_training")
+logger = LoggerFormatter(project_name="mnist_training")
 
 # Set random seed for reproducibility
 logger.seed_everything(42)
