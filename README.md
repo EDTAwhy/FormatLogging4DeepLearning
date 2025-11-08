@@ -6,7 +6,7 @@ The Logger module is a comprehensive logging utility designed for experiment tra
 
 ## Installation
 ```python
-from Logger import Logger
+import Logger
 ```
 
 ## Basic Usage
@@ -171,7 +171,7 @@ logger.rm_logs()
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from logger import Logger
+import Logger
 
 # Define hyperparameters (uppercase for auto-detection)
 BATCH_SIZE = 64
